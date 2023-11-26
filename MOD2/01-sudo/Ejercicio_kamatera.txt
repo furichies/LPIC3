@@ -1,0 +1,5 @@
+#for i in $(cat alumnos ); do useradd -m -s /bin/bash -p $(openssl passwd -1 "qwerty") $i; echo "$i ALL= /bin/test_sudo.sh" > /etc/sudoers.d/$i; done
+for i in $(cat alumnos )
+do
+echo "$i ALL= /bin/test_sudo.sh" > /etc/sudoers.d/$i
+done 
